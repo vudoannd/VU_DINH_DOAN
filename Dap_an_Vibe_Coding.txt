@@ -1,0 +1,24 @@
+ĐÁP ÁN TRẮC NGHIỆM VIBE CODING
+
+Dưới đây là đáp án cho 20 câu hỏi trắc nghiệm dựa trên kiến thức Vibe Coding và các công cụ hỗ trợ lập trình AI:
+
+Câu 1: B) git clone
+Câu 2: A) Đưa các thay đổi vào một branch khác
+Câu 3: D) git fetch (hoặc pull)
+Câu 4: D) Tự động chạy một lệnh theo lịch định sẵn
+Câu 5: C) PostgreSQL
+Câu 6: B) Nhúng một trang web khác vào web của mình.
+Câu 7: C) Một chuỗi ký tự được mã hóa để xác thực ứng dụng khi gọi API
+Câu 8: A) Chỉ mô tả vấn đề: Problem (Đây là cách sai, khi lỗi nên cung cấp cả bối cảnh, expect và step-by-step)
+Câu 9: D) "Hãy đọc toàn bộ code của project này"
+Câu 10: A) Kết nối với GitHub repo (hoặc Upload trực tiếp, tuy nhiên kết nối Repo là phương thức chuẩn nhất trong quy trình CI/CD)
+Câu 11: B) Phân tích -> Thiết kế -> Kiểm soát
+Câu 12: B) Lùi lại để đặt câu hỏi ở góc nhìn tổng quát, khái quát hơn trước khi đi vào chi tiết
+Câu 13: B) Vibe Coding tập trung vào ý tưởng và mô tả bằng ngôn ngữ tự nhiên, không cần viết code đúng cú pháp
+Câu 14: C) Code của 2 branch chỉnh sửa tại cùng vị trí.
+Câu 15: C) Không lưu trạng thái, mỗi lần tải lại trang thì dữ liệu nhập sẽ mất
+Câu 16: B) Dùng Al để tạo ra hoặc cải thiện prompt cho Al khác (hoặc cho chính nó)
+Câu 17: C) Kiểm tra, chạy thử và sửa lỗi nếu cần
+Câu 18: B) PDF, Google Docs, .docx, .pptx, .html và file .txt
+Câu 19: B) Audio/Video overview, mind map, báo cáo, flashcards, quiz, inforgraphic, bảng dữ liệu (Lưu ý: Tính năng nổi bật của NotebookLM là Audio Overview (Podcast), Study guide gồm flashcards/quiz và các loại báo cáo briefing)
+Câu 20: B) Hỗ trợ lập trình bằng Al
