@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Quản trị · BangKeo Vũ Gia Phát</title>
+  <link rel="icon" href="../images/logo.webp" type="image/png">
+
+  <!-- Bootstrap 5 + Bootstrap Icons qua CDN (cùng phiên bản với website khách) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- style.css của website khách: chỉ lấy bộ biến màu thương hiệu (#017DC7)
+       và phần ghi đè nút Bootstrap, để khu quản trị cùng tông với logo -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Lớp riêng của khu quản trị, nạp SAU cùng để ghi đè được -->
+  <link rel="stylesheet" href="css/admin.css">
+
+  <!--
+    CHỐT CHẶN TRUY CẬP — chạy trước khi trình duyệt vẽ bất cứ thứ gì.
+    Chưa có phiên đăng nhập hợp lệ thì chuyển thẳng sang login.html, người
+    dùng không kịp nhìn thấy một mảnh giao diện quản trị nào.
+
+    Đây mới là chốt thứ nhất (chỉ đọc sessionStorage). Chốt thứ hai nằm trong
+    app.js: sau khi mở CSDL sẽ đối chiếu lại với bảng user để chắc chắn tài
+    khoản vẫn tồn tại và vẫn còn quyền is_admin = 1.
+  -->
+  <script src="js/core.js"></script>
+  <script src="js/auth.js"></script>
+  <script>Admin.auth.guard();</script>
+</head>
+
+<body class="admin">
+
+  <!-- =================== MÀN HÌNH CHỜ NẠP CSDL =================== -->
+  <div class="admin-shell">
+
+    <!-- ========================= SIDEBAR =========================
+         Menu riêng của khu quản trị. KHÔNG dùng lại navbar của website
+         khách: khác đối tượng sử dụng, khác cấu trúc điều hướng.
+    -->
+    <aside class="admin-sidebar" id="adminSidebar">
+
+      <a class="admin-brand" href="#/dashboard">
+        <img src="../images/logo.webp" alt="Logo VGP Win Win Tape">
+        <span>
+          <span class="name d-block">Vũ Gia Phát</span>
+          <span class="tag">Khu quản trị</span>
+        </span>
+      </a>
+
+      <nav class="admin-nav" id="adminNav" aria-label="Menu quản trị">
+        <!-- app.js dựng danh sách mục từ sổ đăng ký Admin.page() -->
+      </nav>
+
+      <div class="admin-side-foot">
+        <a class="d-flex align-items-center gap-2 text-decoration-none text-white-50 mb-2"
+           href="../index.html" target="_blank" rel="noopener">
+          <i class="bi bi-box-arrow-up-right"></i>
+          <span>Xem website khách</span>
+        </a>
+        <div class="fs-12">VGP Win Win Tape · </div>
+      </div>
+
+    </aside>
+
+    <div class="admin-backdrop" id="adminBackdrop"></div>
+
+    <!-- ========================== KHUNG CHÍNH ========================== -->
+    <div class="admin-main">
+
+      <header class="admin-topbar">
+        <button class="admin-burger" id="adminBurger" type="button" aria-label="Mở menu quản trị">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="min-w-0">
+          <h1 class="page-title" id="pageTitle">Tổng quan</h1>
+          <div class="page-sub" id="pageSub"></div>
+        </div>
+
+        <div class="ms-auto d-flex align-items-center gap-2 gap-md-3">
+          <div id="adminUser"></div>
+        </div>
+      </header>
+
+
+      <main class="admin-content" id="adminView">
+        <!-- app.js vẽ nội dung của mục đang mở vào đây -->
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ============================ SCRIPTS ============================ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Supabase SDK & Config -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <!-- core.js và auth.js đã nạp ở <head> để chốt chặn chạy sớm nhất có thể -->
+  <script src="js/chart.js"></script>
+
+  <!-- Mỗi mục là một file, tự đăng ký vào sổ Admin.page() -->
+  <script src="js/page-dashboard.js"></script>
+  <script src="js/page-orders.js"></script>
+  <script src="js/page-products.js"></script>
+  <script src="js/page-categories.js"></script>
+  <script src="js/page-users.js"></script>
+  <script src="js/page-feedback.js"></script>
+  <!-- app.js nạp CUỐI CÙNG: lúc dựng menu thì mọi mục đã đăng ký xong -->
+  <script src="js/app.js"></script>
+</body>
+</html>
